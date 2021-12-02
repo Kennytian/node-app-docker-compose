@@ -8,9 +8,15 @@ services:
       - "3000:3001"
     volumes:
       - ./:/app
+      # 不允许 container 里的文件同步到 host 机器里来
       - /app/node_modules
       - /app/dist
     environment:
       - PORT=3001
+      - HELLO=world
     env_file:
+      # 如果变量同名，下一个会覆盖上一个
       - ./.env
+      - ./.env.testing
+      - ./.env.development
+      - ./.env.production
