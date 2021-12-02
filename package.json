@@ -9,6 +9,7 @@
     "docker:logs": "docker logs node-app -f",
     "docker:run": "docker-compose up -d",
     "docker:build": "docker-compose build",
+    "docker:build-up": "docker-compose up --build -d",
     "curl": "curl http://localhost:3000"
   },
   "license": "MIT",

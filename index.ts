@@ -1,8 +1,12 @@
 const express = require("express");
 const app = express();
 app.get("/", (req, res) => {
-	console.log(`request at ${new Date().toString()}`)
-  	res.send("<h1>Hi Kenny!!!</h1>");
+	const date = new Date().toString();
+	console.log(`request at ${date}`);
+	res.send(`<h1>Hello Docker at ${date}</h1>
+		<p>HOST:${process.env.HOST}</p>
+		<p>PORT:${process.env.PORT}</p>
+	`);
 });
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listening on port ${port}`));
