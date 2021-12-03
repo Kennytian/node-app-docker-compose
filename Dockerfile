@@ -8,4 +8,4 @@ RUN sed -i ${APK_MIRROR} /etc/apk/repositories \
     && echo ${TZ} > /etc/timezone \
     && apk del tzdata
 RUN yarn && yarn build
-CMD ["yarn", "start:prod"]
+CMD yarn start:prod
