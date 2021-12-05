@@ -27,7 +27,7 @@ app.get("/", async (req, res) => {
     await redis.set('now', date);
     const timeNowFromRedis = await redis.get('now');
 
-    res.send(`<h1>1Hello Docker at ${date}</h1>
+    res.send(`<h1>7Hello Docker at ${date}</h1>
 		<p>HOST:${process.env.HOST}</p>
 		<p>PORT:${process.env.PORT}</p>
 		<p>ENV3:${process.env.ENV3}</p>
