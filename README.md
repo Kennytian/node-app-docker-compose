@@ -26,3 +26,9 @@
     "curl": "curl http://localhost:3000"
 }
 ```
+
+### Troubleshooting
+#### can not be connecting mysql server
+- docker exec -it node-mysql sh
+- mysql -uroot -ppassword mysql
+- update user set Host = '%' where User = 'root'; flush privileges;

@@ -32,6 +32,8 @@ services:
     restart: always
     ports:
       - "3366:3306"
+    volumes:
+      - mysql:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=password
     networks:
@@ -44,8 +46,14 @@ services:
     command: redis-server --appendonly yes
     ports:
       - "6380:6379"
+    volumes:
+      - redis:/data
     networks:
       - network
+###############################
+volumes:
+  mysql:
+  redis:
 ###############################
 networks:
   network:
