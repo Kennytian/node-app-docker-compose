@@ -36,6 +36,7 @@ services:
       - mysql:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=password
+      - TZ=Asia/Shanghai
     networks:
       - network
 ###############################
@@ -46,6 +47,8 @@ services:
     command: redis-server --appendonly yes
     ports:
       - "6380:6379"
+    environment:
+      - TZ=Asia/Shanghai
     volumes:
       - redis:/data
     networks:
