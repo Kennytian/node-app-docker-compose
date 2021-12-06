@@ -29,6 +29,4 @@
 
 ### Troubleshooting
 #### can not be connecting mysql server
-- docker exec -it node-mysql sh
-- mysql -uroot -ppassword mysql
-- update user set Host = '%' where User = 'root'; flush privileges;
+- `docker exec -it node-mysql mysql -uroot -ppassword mysql -e "update user set Host = '%' where User = 'root'; flush privileges;"`
